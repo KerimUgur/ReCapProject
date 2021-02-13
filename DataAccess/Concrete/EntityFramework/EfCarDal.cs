@@ -16,12 +16,12 @@ namespace DataAccess.Concrete.EntityFramework
         public List<CarDetailDto> GetCarDetails()
         {
             using (NorthwindContext context = new NorthwindContext())
-            {
+           {
                 var result = from c in context.Car
                              join b in context.Brand
                              on c.BrandId equals b.BrandId
                              select new CarDetailDto {CarId = c.CarId, CarName = c.CarName, BrandName =b.BrandName, 
-                                 UnitsInStock = c.UnitInStock };
+                               UnitsInStock = c.UnitInStock };
                 return result.ToList();
 
             }
