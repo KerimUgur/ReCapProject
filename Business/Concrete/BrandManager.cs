@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -24,6 +25,16 @@ namespace Business.Concrete
         public Brand GetById(int brandId)
         {
             return _brandDal.Get(b => b.BrandId == brandId);
+        }
+
+        IDataResult<List<Brand>> IBrandService.GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        IDataResult<Brand> IBrandService.GetById(int brandId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
